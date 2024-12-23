@@ -16,7 +16,7 @@ public static class StripeSuiteRegistrar
         services.AddStripeCustomersUtilAsSingleton();
         services.AddStripePaymentIntentsUtilAsSingleton();
         services.AddStripePaymentMethodsUtilAsSingleton();
-        services.AddStripeSubscriptionUtilAsSingleton();
+        services.AddStripeSubscriptionsUtilAsSingleton();
 
         return services;
     }
@@ -26,7 +26,7 @@ public static class StripeSuiteRegistrar
         services.AddStripeCustomersUtilAsScoped();
         services.AddStripePaymentIntentsUtilAsScoped();
         services.AddStripePaymentMethodsUtilAsScoped();
-        services.AddStripeSubscriptionUtilAsScoped();
+        services.AddStripeSubscriptionsUtilAsScoped();
 
         return services;
     }
