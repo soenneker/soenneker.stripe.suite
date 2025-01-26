@@ -43,7 +43,7 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="3.0.494" />
-        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="3.0.497" />
+        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="3.0.498" />
         <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="3.0.545" />
     </ItemGroup>
 </Project>
