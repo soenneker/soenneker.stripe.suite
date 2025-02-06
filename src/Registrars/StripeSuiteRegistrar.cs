@@ -13,20 +13,20 @@ public static class StripeSuiteRegistrar
 {
     public static IServiceCollection AddStripeSuiteAsSingleton(this IServiceCollection services)
     {
-        services.AddStripeCustomersUtilAsSingleton();
-        services.AddStripePaymentIntentsUtilAsSingleton();
-        services.AddStripePaymentMethodsUtilAsSingleton();
-        services.AddStripeSubscriptionsUtilAsSingleton();
+        services.AddStripeCustomersUtilAsSingleton()
+                .AddStripePaymentIntentsUtilAsSingleton()
+                .AddStripePaymentMethodsUtilAsSingleton()
+                .AddStripeSubscriptionsUtilAsSingleton();
 
         return services;
     }
 
     public static IServiceCollection AddStripeSuiteAsScoped(this IServiceCollection services)
     {
-        services.AddStripeCustomersUtilAsScoped();
-        services.AddStripePaymentIntentsUtilAsScoped();
-        services.AddStripePaymentMethodsUtilAsScoped();
-        services.AddStripeSubscriptionsUtilAsScoped();
+        services.AddStripeCustomersUtilAsScoped()
+                .AddStripePaymentIntentsUtilAsScoped()
+                .AddStripePaymentMethodsUtilAsScoped()
+                .AddStripeSubscriptionsUtilAsScoped();
 
         return services;
     }
