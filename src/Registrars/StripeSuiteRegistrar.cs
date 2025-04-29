@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Soenneker.Stripe.Customers.Registrars;
 using Soenneker.Stripe.PaymentIntents.Registrars;
 using Soenneker.Stripe.PaymentMethods.Registrars;
+using Soenneker.Stripe.SetupIntents.Registrars;
 using Soenneker.Stripe.Subscriptions.Registrars;
 
 namespace Soenneker.Stripe.Suite.Registrars;
@@ -16,7 +17,8 @@ public static class StripeSuiteRegistrar
         services.AddStripeCustomersUtilAsSingleton()
                 .AddStripePaymentIntentsUtilAsSingleton()
                 .AddStripePaymentMethodsUtilAsSingleton()
-                .AddStripeSubscriptionsUtilAsSingleton();
+                .AddStripeSubscriptionsUtilAsSingleton()
+                .AddStripeSetupIntentsUtilAsSingleton();
 
         return services;
     }
@@ -26,7 +28,8 @@ public static class StripeSuiteRegistrar
         services.AddStripeCustomersUtilAsScoped()
                 .AddStripePaymentIntentsUtilAsScoped()
                 .AddStripePaymentMethodsUtilAsScoped()
-                .AddStripeSubscriptionsUtilAsScoped();
+                .AddStripeSubscriptionsUtilAsScoped()
+                .AddStripeSetupIntentsUtilAsScoped();
 
         return services;
     }
