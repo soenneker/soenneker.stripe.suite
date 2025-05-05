@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Stripe.Suite
+﻿# Contributing to Soenneker.Stripe.Suite
 
 We're excited that you're interested in contributing!
 
