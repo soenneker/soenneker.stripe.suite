@@ -4,6 +4,7 @@ using Soenneker.Stripe.InvoiceItems.Registrars;
 using Soenneker.Stripe.PaymentIntents.Registrars;
 using Soenneker.Stripe.PaymentMethods.Registrars;
 using Soenneker.Stripe.SetupIntents.Registrars;
+using Soenneker.Stripe.SubscriptionItems.Registrars;
 using Soenneker.Stripe.Subscriptions.Registrars;
 
 namespace Soenneker.Stripe.Suite.Registrars;
@@ -20,7 +21,8 @@ public static class StripeSuiteRegistrar
                 .AddStripePaymentMethodsUtilAsSingleton()
                 .AddStripeSubscriptionsUtilAsSingleton()
                 .AddStripeSetupIntentsUtilAsSingleton()
-                .AddStripeInvoiceItemsUtilAsSingleton();
+                .AddStripeInvoiceItemsUtilAsSingleton()
+                .AddStripeSubscriptionItemsUtilAsSingleton();
 
         return services;
     }
@@ -32,7 +34,8 @@ public static class StripeSuiteRegistrar
                 .AddStripePaymentMethodsUtilAsScoped()
                 .AddStripeSubscriptionsUtilAsScoped()
                 .AddStripeSetupIntentsUtilAsScoped()
-                .AddStripeInvoiceItemsUtilAsScoped();
+                .AddStripeInvoiceItemsUtilAsScoped()
+                .AddStripeSubscriptionItemsUtilAsScoped();
 
         return services;
     }
