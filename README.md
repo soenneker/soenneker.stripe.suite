@@ -1,10 +1,11 @@
-﻿<p align="center">
+<p align="center">
+[![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.stripe.suite/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.stripe.suite/actions/workflows/codeql.yml)
   <img src="https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png" height="80" alt="Soenneker logo" />
 </p>
 
 <h1 align="center">Soenneker.Stripe.Suite</h1>
 
-<p align="center"><strong>A comprehensive suite of Stripe utility libraries for .NET — built for clarity, flexibility, and scalability.</strong></p>
+<p align="center"><strong>A comprehensive suite of Stripe utility libraries for .NET � built for clarity, flexibility, and scalability.</strong></p>
 
 <p align="center">
   <a href="https://www.nuget.org/packages/soenneker.stripe.suite/">
@@ -20,13 +21,13 @@
 
 ---
 
-## 📦 Overview
+## ?? Overview
 
-This package aggregates the core Soenneker Stripe utilities into a single unified registration entry point — enabling fast and clean integration for applications needing customer management, subscriptions, usage billing, saved payment methods, and secure off-session payments.
+This package aggregates the core Soenneker Stripe utilities into a single unified registration entry point � enabling fast and clean integration for applications needing customer management, subscriptions, usage billing, saved payment methods, and secure off-session payments.
 
 ---
 
-## 🧩 Included Utilities
+## ?? Included Utilities
 
 | Utility (GitHub) | NuGet | Description |
 |------------------|-------|-------------|
@@ -38,7 +39,7 @@ This package aggregates the core Soenneker Stripe utilities into a single unifie
 
 ---
 
-## 🚀 Installation
+## ?? Installation
 
 ```bash
 dotnet add package Soenneker.Stripe.Suite
@@ -46,7 +47,7 @@ dotnet add package Soenneker.Stripe.Suite
 
 ---
 
-## 🛠️ Usage
+## ??? Usage
 
 Register all Stripe utilities in your application:
 
@@ -62,22 +63,22 @@ public void ConfigureServices(IServiceCollection services)
 
 ---
 
-## 🔒 Security and Compliance
+## ?? Security and Compliance
 
 All utilities are designed to comply with:
 
-* 🔐 [Strong Customer Authentication (SCA)](https://stripe.com/docs/strong-customer-authentication)
-* 🕒 Off-session billing flows
-* ✅ 3D Secure
-* 🔁 Idempotent retries
-* 🧾 Mandate agreements for bank debits and recurring charges
+* ?? [Strong Customer Authentication (SCA)](https://stripe.com/docs/strong-customer-authentication)
+* ?? Off-session billing flows
+* ? 3D Secure
+* ?? Idempotent retries
+* ?? Mandate agreements for bank debits and recurring charges
 
 ---
 
-## 📚 Documentation
+## ?? Documentation
 
 Each utility is:
 
-* ✅ Fully XML-commented
-* 🧪 Designed for testability via interfaces
-* 🔗 Individually documented in its own GitHub repository
+* ? Fully XML-commented
+* ?? Designed for testability via interfaces
+* ?? Individually documented in its own GitHub repository
