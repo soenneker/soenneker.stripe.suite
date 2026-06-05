@@ -14,6 +14,11 @@ namespace Soenneker.Stripe.Suite.Registrars;
 /// </summary>
 public static class StripeSuiteRegistrar
 {
+    /// <summary>
+    /// Adds stripe suite as singleton.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <returns>The result of the operation.</returns>
     public static IServiceCollection AddStripeSuiteAsSingleton(this IServiceCollection services)
     {
         services.AddStripeCustomersUtilAsSingleton()
@@ -27,6 +32,11 @@ public static class StripeSuiteRegistrar
         return services;
     }
 
+    /// <summary>
+    /// Adds stripe suite as scoped.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <returns>The result of the operation.</returns>
     public static IServiceCollection AddStripeSuiteAsScoped(this IServiceCollection services)
     {
         services.AddStripeCustomersUtilAsScoped()
