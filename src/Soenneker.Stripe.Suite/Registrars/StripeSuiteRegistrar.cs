@@ -10,7 +10,7 @@ using Soenneker.Stripe.Subscriptions.Registrars;
 namespace Soenneker.Stripe.Suite.Registrars;
 
 /// <summary>
-/// A comprehensive suite of utility libraries for Stripe
+/// Registers the bundled Stripe customer, payment, setup-intent, invoice-item, and subscription operations.
 /// </summary>
 public static class StripeSuiteRegistrar
 {

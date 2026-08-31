@@ -1,84 +1,60 @@
-<p align="center">
+[![](https://img.shields.io/nuget/v/soenneker.stripe.suite.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.stripe.suite/)
+[![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.stripe.suite/publish-package.yml?style=for-the-badge)](https://github.com/soenneker/soenneker.stripe.suite/actions/workflows/publish-package.yml)
+[![](https://img.shields.io/nuget/dt/soenneker.stripe.suite.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.stripe.suite/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.stripe.suite/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.stripe.suite/actions/workflows/codeql.yml)
-  <img src="https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png" height="80" alt="Soenneker logo" />
-</p>
 
-<h1 align="center">Soenneker.Stripe.Suite</h1>
+# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Stripe.Suite
 
-<p align="center"><strong>A comprehensive suite of Stripe utility libraries for .NET — built for clarity, flexibility, and scalability.</strong></p>
+Install and register the Soenneker Stripe customer, payment, setup-intent, invoice-item, and subscription libraries as one package.
 
-<p align="center">
-  <a href="https://www.nuget.org/packages/soenneker.stripe.suite/">
-    <img src="https://img.shields.io/nuget/v/soenneker.stripe.suite.svg?style=for-the-badge" alt="NuGet version" />
-  </a>
-  <a href="https://github.com/soenneker/soenneker.stripe.suite/actions/workflows/publish-package.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.stripe.suite/publish-package.yml?style=for-the-badge" alt="Build status" />
-  </a>
-  <a href="https://www.nuget.org/packages/soenneker.stripe.suite/">
-    <img src="https://img.shields.io/nuget/dt/soenneker.stripe.suite.svg?style=for-the-badge" alt="NuGet downloads" />
-  </a>
-</p>
+## Included packages
 
----
+- `Soenneker.Stripe.Customers`
+- `Soenneker.Stripe.InvoiceItems`
+- `Soenneker.Stripe.PaymentIntents`
+- `Soenneker.Stripe.PaymentMethods`
+- `Soenneker.Stripe.SetupIntents`
+- `Soenneker.Stripe.SubscriptionItems`
+- `Soenneker.Stripe.Subscriptions`
 
-## ?? Overview
-
-This package aggregates the core Soenneker Stripe utilities into a single unified registration entry point — enabling fast and clean integration for applications needing customer management, subscriptions, usage billing, saved payment methods, and secure off-session payments.
-
----
-
-## ?? Included Utilities
-
-| Utility (GitHub) | NuGet | Description |
-|------------------|-------|-------------|
-| [Soenneker.Stripe.Customers](https://github.com/soenneker/soenneker.stripe.customers) | [![NuGet](https://img.shields.io/nuget/v/Soenneker.Stripe.Customers.svg)](https://www.nuget.org/packages/Soenneker.Stripe.Customers) | Manage Stripe customers with strong abstractions |
-| [Soenneker.Stripe.PaymentIntents](https://github.com/soenneker/soenneker.stripe.paymentintents) | [![NuGet](https://img.shields.io/nuget/v/Soenneker.Stripe.PaymentIntents.svg)](https://www.nuget.org/packages/Soenneker.Stripe.PaymentIntents) | Create, confirm, capture, and cancel PaymentIntents |
-| [Soenneker.Stripe.PaymentMethods](https://github.com/soenneker/soenneker.stripe.paymentmethods) | [![NuGet](https://img.shields.io/nuget/v/Soenneker.Stripe.PaymentMethods.svg)](https://www.nuget.org/packages/Soenneker.Stripe.PaymentMethods) | List, delete, and manage customer payment methods |
-| [Soenneker.Stripe.Subscriptions](https://github.com/soenneker/soenneker.stripe.subscriptions) | [![NuGet](https://img.shields.io/nuget/v/Soenneker.Stripe.Subscriptions.svg)](https://www.nuget.org/packages/Soenneker.Stripe.Subscriptions) | Full subscription lifecycle support, including proration, metadata, and billing anchors |
-| [Soenneker.Stripe.SetupIntents](https://github.com/soenneker/soenneker.stripe.setupintents) | [![NuGet](https://img.shields.io/nuget/v/Soenneker.Stripe.SetupIntents.svg)](https://www.nuget.org/packages/Soenneker.Stripe.SetupIntents) | Save and validate payment methods for future off-session billing, including mandate and 3DS support |
-
----
-
-## ?? Installation
+## Installation
 
 ```bash
 dotnet add package Soenneker.Stripe.Suite
-````
+```
 
----
+## Configuration
 
-## ??? Usage
-
-Register all Stripe utilities in your application:
-
-```csharp
-using Microsoft.Extensions.DependencyInjection;
-using Soenneker.Stripe.Suite.Registrars;
-
-public void ConfigureServices(IServiceCollection services)
+```json
 {
-    services.AddStripeSuiteAsSingleton(); // Or .AddStripeSuiteAsScoped()
+  "Stripe": {
+    "SecretKey": "sk_test_..."
+  }
 }
 ```
 
----
+## Usage
 
-## ?? Security and Compliance
+```csharp
+using Soenneker.Stripe.Customers.Abstract;
+using Soenneker.Stripe.PaymentIntents.Abstract;
+using Soenneker.Stripe.Suite.Registrars;
 
-All utilities are designed to comply with:
+services.AddStripeSuiteAsScoped();
 
-* ?? [Strong Customer Authentication (SCA)](https://stripe.com/docs/strong-customer-authentication)
-* ?? Off-session billing flows
-* ? 3D Secure
-* ?? Idempotent retries
-* ?? Mandate agreements for bank debits and recurring charges
+Stripe.Customer? customer = await stripeCustomersUtil.Create(
+    email: "customer@example.com",
+    name: "Example Customer",
+    userId: applicationUserId,
+    cancellationToken: cancellationToken);
 
----
+Stripe.PaymentIntent intent = await stripePaymentIntentsUtil.Create(
+    customer!.Id,
+    amount: 49.95m,
+    idempotencyKey: $"order-{orderId}",
+    cancellationToken: cancellationToken);
+```
 
-## ?? Documentation
+`AddStripeSuiteAsScoped` creates scoped utility wrappers that all borrow the same singleton Stripe client. Disposing a scope releases those wrappers without tearing down the shared client. Use `AddStripeSuiteAsSingleton` when the utility wrappers should also live for the application lifetime.
 
-Each utility is:
-
-* ? Fully XML-commented
-* ?? Designed for testability via interfaces
-* ?? Individually documented in its own GitHub repository
+This suite does not add behavior beyond its component packages. Refer to each package for operation-specific details, especially destructive and account-wide methods.
