@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Stripe.Customers" Version="4.0.1173" />
+        <PackageReference Include="Soenneker.Stripe.Customers" Version="4.0.1174" />
         <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.269" />
         <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="4.0.1218" />
         <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1205" />
