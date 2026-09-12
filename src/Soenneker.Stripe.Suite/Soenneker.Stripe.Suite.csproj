@@ -48,7 +48,7 @@
         <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.293" />
         <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="4.0.1239" />
         <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1226" />
-        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.445" />
+        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.446" />
         <PackageReference Include="Soenneker.Stripe.SubscriptionItems" Version="4.0.292" />
         <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="4.0.1371" />
     </ItemGroup>
