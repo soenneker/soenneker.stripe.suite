@@ -45,11 +45,11 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Stripe.Customers" Version="4.0.1207" />
-        <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.306" />
+        <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.307" />
         <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="4.0.1257" />
-        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1242" />
-        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.461" />
+        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1243" />
+        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.462" />
         <PackageReference Include="Soenneker.Stripe.SubscriptionItems" Version="4.0.305" />
-        <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="4.0.1392" />
+        <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="4.0.1393" />
     </ItemGroup>
 </Project>
