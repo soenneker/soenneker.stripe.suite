@@ -46,12 +46,12 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Stripe.Customers" Version="4.0.1213" />
-        <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.311" />
-        <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="4.0.1263" />
-        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1247" />
-        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.466" />
-        <PackageReference Include="Soenneker.Stripe.SubscriptionItems" Version="4.0.309" />
-        <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="4.0.1399" />
+        <PackageReference Include="Soenneker.Stripe.InvoiceItems" Version="4.0.312" />
+        <PackageReference Include="Soenneker.Stripe.PaymentIntents" Version="4.0.1264" />
+        <PackageReference Include="Soenneker.Stripe.PaymentMethods" Version="4.0.1248" />
+        <PackageReference Include="Soenneker.Stripe.SetupIntents" Version="4.0.468" />
+        <PackageReference Include="Soenneker.Stripe.SubscriptionItems" Version="4.0.311" />
+        <PackageReference Include="Soenneker.Stripe.Subscriptions" Version="4.0.1400" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
